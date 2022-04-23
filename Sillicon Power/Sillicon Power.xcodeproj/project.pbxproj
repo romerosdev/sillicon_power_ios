@@ -14,6 +14,13 @@
 		0FA9D55B2812EF0E00C2FBD8 /* Sillicon_PowerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9D55A2812EF0E00C2FBD8 /* Sillicon_PowerTests.swift */; };
 		0FA9D5652812EF0E00C2FBD8 /* Sillicon_PowerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9D5642812EF0E00C2FBD8 /* Sillicon_PowerUITests.swift */; };
 		0FA9D5672812EF0E00C2FBD8 /* Sillicon_PowerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9D5662812EF0E00C2FBD8 /* Sillicon_PowerUITestsLaunchTests.swift */; };
+		0FA9D5752812F11900C2FBD8 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9D5742812F11900C2FBD8 /* Movie.swift */; };
+		0FA9D5792812F78B00C2FBD8 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9D5782812F78B00C2FBD8 /* APIError.swift */; };
+		0FA9D57B2812F87100C2FBD8 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9D57A2812F87100C2FBD8 /* MovieService.swift */; };
+		0FA9D5802812FAFA00C2FBD8 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9D57F2812FAFA00C2FBD8 /* MovieViewModel.swift */; };
+		0FA9D5832812FD3F00C2FBD8 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9D5822812FD3F00C2FBD8 /* ArrayExtension.swift */; };
+		0FA9D5852813F01E00C2FBD8 /* URLSessionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9D5842813F01E00C2FBD8 /* URLSessionExtension.swift */; };
+		0FA9D5882813F21800C2FBD8 /* MovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9D5872813F21800C2FBD8 /* MovieAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +51,13 @@
 		0FA9D5602812EF0E00C2FBD8 /* Sillicon PowerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sillicon PowerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FA9D5642812EF0E00C2FBD8 /* Sillicon_PowerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sillicon_PowerUITests.swift; sourceTree = "<group>"; };
 		0FA9D5662812EF0E00C2FBD8 /* Sillicon_PowerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sillicon_PowerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0FA9D5742812F11900C2FBD8 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		0FA9D5782812F78B00C2FBD8 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		0FA9D57A2812F87100C2FBD8 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		0FA9D57F2812FAFA00C2FBD8 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		0FA9D5822812FD3F00C2FBD8 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		0FA9D5842813F01E00C2FBD8 /* URLSessionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtension.swift; sourceTree = "<group>"; };
+		0FA9D5872813F21800C2FBD8 /* MovieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +108,11 @@
 		0FA9D5482812EF0E00C2FBD8 /* Sillicon Power */ = {
 			isa = PBXGroup;
 			children = (
-				0FA9D5492812EF0E00C2FBD8 /* Sillicon_PowerApp.swift */,
+				0FA9D5812812FD3000C2FBD8 /* Extensions */,
+				0FA9D5862813F1FB00C2FBD8 /* API */,
+				0FA9D58928140E2D00C2FBD8 /* Feature */,
 				0FA9D54B2812EF0E00C2FBD8 /* ContentView.swift */,
+				0FA9D5492812EF0E00C2FBD8 /* Sillicon_PowerApp.swift */,
 				0FA9D54D2812EF0E00C2FBD8 /* Assets.xcassets */,
 				0FA9D54F2812EF0E00C2FBD8 /* Preview Content */,
 			);
@@ -125,6 +142,66 @@
 				0FA9D5662812EF0E00C2FBD8 /* Sillicon_PowerUITestsLaunchTests.swift */,
 			);
 			path = "Sillicon PowerUITests";
+			sourceTree = "<group>";
+		};
+		0FA9D5732812F07400C2FBD8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0FA9D5742812F11900C2FBD8 /* Movie.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0FA9D5762812F75300C2FBD8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0FA9D57A2812F87100C2FBD8 /* MovieService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0FA9D57E2812FAC300C2FBD8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0FA9D57F2812FAFA00C2FBD8 /* MovieViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0FA9D5812812FD3000C2FBD8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0FA9D5822812FD3F00C2FBD8 /* ArrayExtension.swift */,
+				0FA9D5842813F01E00C2FBD8 /* URLSessionExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0FA9D5862813F1FB00C2FBD8 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0FA9D5872813F21800C2FBD8 /* MovieAPI.swift */,
+				0FA9D5782812F78B00C2FBD8 /* APIError.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		0FA9D58928140E2D00C2FBD8 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				0FA9D58A28140E4500C2FBD8 /* MoviesList */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		0FA9D58A28140E4500C2FBD8 /* MoviesList */ = {
+			isa = PBXGroup;
+			children = (
+				0FA9D5732812F07400C2FBD8 /* Model */,
+				0FA9D5762812F75300C2FBD8 /* Service */,
+				0FA9D57E2812FAC300C2FBD8 /* ViewModel */,
+			);
+			path = MoviesList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +334,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FA9D5852813F01E00C2FBD8 /* URLSessionExtension.swift in Sources */,
 				0FA9D54C2812EF0E00C2FBD8 /* ContentView.swift in Sources */,
+				0FA9D57B2812F87100C2FBD8 /* MovieService.swift in Sources */,
+				0FA9D5792812F78B00C2FBD8 /* APIError.swift in Sources */,
 				0FA9D54A2812EF0E00C2FBD8 /* Sillicon_PowerApp.swift in Sources */,
+				0FA9D5882813F21800C2FBD8 /* MovieAPI.swift in Sources */,
+				0FA9D5832812FD3F00C2FBD8 /* ArrayExtension.swift in Sources */,
+				0FA9D5752812F11900C2FBD8 /* Movie.swift in Sources */,
+				0FA9D5802812FAFA00C2FBD8 /* MovieViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +429,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -399,7 +483,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
