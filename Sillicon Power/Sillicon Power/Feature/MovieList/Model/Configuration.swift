@@ -14,7 +14,7 @@ import Foundation
 // MARK: - Configuration
 struct ConfigurationResponse: Codable {
     let images: Images
-
+    
     enum CodingKeys: String, CodingKey {
         case images
     }
@@ -27,7 +27,7 @@ struct Images: Codable {
     let backdropSizes: [String]
     let logoSizes: [String]
     let posterSizes: [String]
-
+    
     enum CodingKeys: String, CodingKey {
         case baseURL = "base_url"
         case secureBaseURL = "secure_base_url"
