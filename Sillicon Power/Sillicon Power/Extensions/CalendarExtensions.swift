@@ -9,13 +9,17 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import SwiftUI
+import Foundation
 
-@main
-struct Sillicon_PowerApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+extension Calendar {
+    /// Calculate number of days between two dates.
+    /// - Parameters:
+    ///   - from: First date.
+    ///   - to: Second date.
+    /// - Returns: Number of days.
+    func numberOfDaysBetween(_ from: Date, and to: Date) -> Int {
+        let numberOfDays = dateComponents([.day], from: from, to: to)
+        
+        return numberOfDays.day!
     }
 }
