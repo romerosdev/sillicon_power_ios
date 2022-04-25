@@ -61,8 +61,8 @@ final class MovieViewModelImpl: ObservableObject, MovieViewModel {
                 defaults.set(data.images.secureBaseURL, forKey: "secure_base_url")
                 defaults.set(Date(), forKey: "updated")
             } catch {
-                state = .failed(error: error)
-                hasError = true
+                // Harcoded option, not save updated key.
+                defaults.set("https://image.tmdb.org/t/p/", forKey: "secure_base_url")
             }
         }
     }
