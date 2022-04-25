@@ -29,11 +29,7 @@ struct MovieDetailView: View {
                             EmptyView()
                         } inProgress: { progress in
                             // Display progress
-                            Rectangle()
-                                .foregroundColor(Color.gray.opacity(0.2))
-                                .overlay(
-                                    ProgressView()
-                                )
+                            MovieBackdropPlaceholderView(movie: movie)
                         } failure: { error, retry in
                             // Downloading error
                             MovieBackdropPlaceholderView(movie: movie)
@@ -44,8 +40,6 @@ struct MovieDetailView: View {
                                 .aspectRatio(contentMode: .fill)
                                 .applyHeaderStyle(movie: movie)
                         }
-                        .environment(\.urlImageOptions,
-                                      .init(fetchPolicy: .returnStoreElseLoad(downloadDelay: nil)))
                     } else {
                         // No url from API
                         MovieBackdropPlaceholderView(movie: movie)
@@ -69,25 +63,20 @@ struct MovieDetailView: View {
                                             } inProgress: { progress in
                                                 // Display progress
                                                 ProgressView()
+                                                    .applyNetworkStyle()
                                             } failure: { error, retry in
                                                 // Downloading error
+                                                Text(network.name)
+                                                    .applyNetworkStyle()
+                                                    .accessibilityLabel(Text(network.name))
                                             } content: { image in
                                                 // Downloaded successfully
                                                 image
                                                     .resizable()
                                                     .aspectRatio(contentMode: .fit)
-                                                    .frame(width: 60, height: 60)
-                                                    .padding(5)
-                                                    .cornerRadius(5)
-                                                    .overlay(
-                                                        RoundedRectangle(cornerRadius: 5)
-                                                            .stroke(Color.accentColor, lineWidth: 2)
-                                                    )
-                                                    .padding(.leading, 5)
+                                                    .applyNetworkStyle()
                                                     .accessibilityLabel(Text(network.name))
                                             }
-                                            .environment(\.urlImageOptions,
-                                                          .init(fetchPolicy: .returnStoreElseLoad(downloadDelay: nil)))
                                         }
                                     }
                                 }
