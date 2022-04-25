@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F666FE12816CF8D003AA615 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F666FE02816CF8D003AA615 /* LaunchScreen.storyboard */; };
 		0F6FD816281489C800E1D3C7 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6FD815281489C800E1D3C7 /* Configuration.swift */; };
 		0F6FD8182815483D00E1D3C7 /* CalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6FD8172815483D00E1D3C7 /* CalendarExtensions.swift */; };
 		0F6FD81A28154D6A00E1D3C7 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6FD81928154D6A00E1D3C7 /* ErrorView.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F666FE02816CF8D003AA615 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F6FD815281489C800E1D3C7 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		0F6FD8172815483D00E1D3C7 /* CalendarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtensions.swift; sourceTree = "<group>"; };
 		0F6FD81928154D6A00E1D3C7 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		0FA9D5482812EF0E00C2FBD8 /* Sillicon Power */ = {
 			isa = PBXGroup;
 			children = (
+				0F666FE02816CF8D003AA615 /* LaunchScreen.storyboard */,
 				0F6FD8452816BA8500E1D3C7 /* Localization */,
 				0FA9D5812812FD3000C2FBD8 /* Extensions */,
 				0FA9D5862813F1FB00C2FBD8 /* API */,
@@ -379,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FA9D5512812EF0E00C2FBD8 /* Preview Assets.xcassets in Resources */,
+				0F666FE12816CF8D003AA615 /* LaunchScreen.storyboard in Resources */,
 				0F6FD8492816BA8500E1D3C7 /* Localizable.strings in Resources */,
 				0FA9D54E2812EF0E00C2FBD8 /* Assets.xcassets in Resources */,
 			);
@@ -599,6 +603,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
@@ -630,6 +635,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
