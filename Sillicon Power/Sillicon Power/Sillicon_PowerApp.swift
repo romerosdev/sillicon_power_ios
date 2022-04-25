@@ -20,6 +20,10 @@ struct Sillicon_PowerApp: App {
                                           inMemoryStore: URLImageInMemoryStore())
     
     var body: some Scene {
+        
+        let urlImageService = URLImageService(fileStore: URLImageFileStore(),
+                                              inMemoryStore: URLImageInMemoryStore())
+        
         WindowGroup {
             MovieListView()
                 .environment(\.urlImageService, urlImageService)

@@ -17,7 +17,7 @@ struct MovieListView: View {
     @StateObject var vm: MovieViewModelImpl
     
     init() {
-        _vm = StateObject(wrappedValue: MovieViewModelImpl(service: MovieServiceImpl()))
+        _vm = StateObject(wrappedValue: MovieViewModelImpl(service: MovieServiceImpl(), offlineService: RealmServiceImpl()))
     }
     
     var columns: [GridItem] = Array(repeating: .init(.adaptive(minimum: 150)), count: 2)
