@@ -36,8 +36,6 @@ struct MovieView: View {
                     .aspectRatio(contentMode: .fill)
                     .accessibilityLabel(Text(movie.name ?? movie.originalName ?? ""))
             }
-            .environment(\.urlImageOptions,
-                          .init(fetchPolicy: .returnStoreElseLoad(downloadDelay: nil)))
         } else {
             // No url from API
             MoviePosterPlaceholderView(movie: movie)

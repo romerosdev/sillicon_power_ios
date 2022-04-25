@@ -10,12 +10,19 @@
 ////////////////////////////////////////////////////////////////////////////
 
 import SwiftUI
+import URLImage
+import URLImageStore
 
 @main
 struct Sillicon_PowerApp: App {
+    
+    let urlImageService = URLImageService(fileStore: URLImageFileStore(),
+                                          inMemoryStore: URLImageInMemoryStore())
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MovieListView()
+                .environment(\.urlImageService, urlImageService)
         }
     }
 }
