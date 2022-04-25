@@ -17,32 +17,32 @@ protocol APIBuilder {
     var url: String { get }
 }
 
-enum MovieAPI {
+enum TheMovieDBAPI {
+    case configuration
     case getMovies
+    case getMovieDetail(Int)
 }
 
-extension MovieAPI: APIBuilder {
+extension TheMovieDBAPI: APIBuilder {
     
-    static let apiKey = "c6aeee5775a38e487b74dfede5deb"
+    static let apiKey = "c6aeee577586ba38e487b74dfede5deb"
     
     var baseUrl: String {
-        switch self {
-        case .getMovies:
-            return "https://api.themoviedb.org/3"
-        }
+        return "https://api.themoviedb.org/3"
     }
     
     var path: String {
         switch self {
+        case .configuration:
+            return "/configuration"
         case .getMovies:
             return "/tv/popular"
+        case .getMovieDetail(let id):
+            return "/tv/\(id)"
         }
     }
     
     var url: String {
-        switch self {
-        case .getMovies:
-            return self.baseUrl + self.path
-        }
+        return self.baseUrl + self.path
     }
 }

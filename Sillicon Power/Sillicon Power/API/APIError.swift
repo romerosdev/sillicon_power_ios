@@ -69,9 +69,9 @@ enum APIError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .transportError(_):
-            return "Please check your internet connection and try again"
+            return "ERR_NO_INTERNET_DESCRIPTION".localized()
         default:
-            return "The service is temporarily unavailable. Please try again later"
+            return "MSG_SERVICE_NOT_AVAILABLE".localized()
         }
     }
 }

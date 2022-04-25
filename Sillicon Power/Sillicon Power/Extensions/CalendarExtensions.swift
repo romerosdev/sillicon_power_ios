@@ -9,17 +9,17 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import SwiftUI
+import Foundation
 
-struct ContentView: View {
-    
-    var body: some View {
-        MovieListView()
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+extension Calendar {
+    /// Calculate number of days between two dates.
+    /// - Parameters:
+    ///   - from: First date.
+    ///   - to: Second date.
+    /// - Returns: Number of days.
+    func numberOfDaysBetween(_ from: Date, and to: Date) -> Int {
+        let numberOfDays = dateComponents([.day], from: from, to: to)
+        
+        return numberOfDays.day!
     }
 }
