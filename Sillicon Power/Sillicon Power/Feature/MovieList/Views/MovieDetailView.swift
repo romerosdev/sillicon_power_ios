@@ -1,9 +1,13 @@
+////////////////////////////////////////////////////////////////////////////
 //
-//  MovieDetailView.swift
-//  Sillicon Power
+// Copyright 2022. All rights reserved.
 //
-//  Created by Raul Romero on 24/4/22.
+// Author: Raul Romero (raulromerodev@gmail.com)
 //
+// For the full copyright and license information, please view the LICENSE
+// file that was distributed with this source code.
+//
+////////////////////////////////////////////////////////////////////////////
 
 import SwiftUI
 import URLImage
@@ -180,7 +184,7 @@ struct MovieDetailView: View {
 }
 
 struct MovieBackdropPlaceholderView: View {
-
+    
     let movie: Movie
     
     var body: some View {
