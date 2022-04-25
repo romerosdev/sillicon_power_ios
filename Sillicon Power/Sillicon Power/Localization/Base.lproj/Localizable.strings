@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  Sillicon Power
+
+  Created by Raul Romero on 25/4/22.
+  
+*/
+"locale" = "en";
+"ERR_NO_INTERNET_TITLE" = "You are offline";
+"ERR_NO_INTERNET_DESCRIPTION" = "Please check your internet connection and try again";
+"ERR_TRY_AGAIN" = "Try again";
+"MSG_SERVICE_NOT_AVAILABLE" = "The service is temporarily unavailable. Please try again later";
+"SEASONS" = "seasons";
+"EPISODES" = "episodes";
+"NETWORKS" = "Where to watch";
+"GENRES" = "Genres";
+"SYNOPSIS" = "Synopsis";
+"MOVIE_LIST_TITLE" = "Popular shows";
