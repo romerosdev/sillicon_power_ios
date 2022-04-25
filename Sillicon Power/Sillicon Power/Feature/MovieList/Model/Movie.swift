@@ -43,6 +43,7 @@ struct Movie: Codable, Identifiable, Equatable, Hashable {
     let languages: [String]?
     let seasons: Int?
     let episodes: Int?
+    let homepage: String?
     
     var date: Date? {
         guard let firstAirDate = firstAirDate else { return nil }
@@ -71,6 +72,7 @@ struct Movie: Codable, Identifiable, Equatable, Hashable {
         case languages
         case seasons = "number_of_seasons"
         case episodes = "number_of_episodes"
+        case homepage
     }
     
     func hash(into hasher: inout Hasher) {
@@ -120,7 +122,8 @@ extension Movie {
               ],
               languages: ["en"],
               seasons: 1,
-              episodes: 6
+              episodes: 6,
+              homepage: "https://www.disneyplus.com/series/moon-knight/4S3oOF1knocS"
         )
     }
 }

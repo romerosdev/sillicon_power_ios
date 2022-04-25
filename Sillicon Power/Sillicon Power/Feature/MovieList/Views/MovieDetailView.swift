@@ -11,6 +11,7 @@ import URLImage
 struct MovieDetailView: View {
     
     @Environment(\.presentationMode) private var presentationMode
+    @Environment(\.openURL) var openURL
     let movie: Movie
     let baseUrl = UserDefaults.standard.string(forKey: "secure_base_url")
     
@@ -138,11 +139,10 @@ struct MovieDetailView: View {
             
             VStack(alignment:.trailing) {
                 HStack {
-                    Spacer()
-                    Image(systemName: "xmark")
+                    Image(systemName: "chevron.down.circle")
                         .resizable()
-                        .frame(width: 15, height: 15)
-                        .padding(10)
+                        .frame(width: 25, height: 25)
+                        .padding(5)
                         .foregroundColor(.white)
                         .background(Color.black.opacity(0.5))
                         .clipShape(Circle())
@@ -150,10 +150,32 @@ struct MovieDetailView: View {
                         .onTapGesture {
                             self.presentationMode.wrappedValue.dismiss()
                         }
+                    Spacer()
+                    if let link = movie.homepage, !link.isEmpty {
+                        Image(systemName: "arrowshape.turn.up.forward.circle")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                            .padding(5)
+                            .foregroundColor(.white)
+                            .background(Color.black.opacity(0.5))
+                            .clipShape(Circle())
+                            .padding(15)
+                            .onTapGesture {
+                                load(url: link)
+                            }
+                    }
                 }
                 Spacer()
             }
         }
+    }
+    
+    func load(url: String?) {
+        guard let url = url,
+              let linkUrl = URL(string: url) else {
+            return
+        }
+        openURL(linkUrl)
     }
 }
 
