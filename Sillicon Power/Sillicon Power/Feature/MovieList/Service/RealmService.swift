@@ -1,12 +1,17 @@
+////////////////////////////////////////////////////////////////////////////
 //
-//  RealmManager.swift
-//  Sillicon Power
+// Copyright 2022. All rights reserved.
 //
-//  Created by Raul Romero on 25/4/22.
+// Author: Raul Romero (raulromerodev@gmail.com)
 //
+// For the full copyright and license information, please view the LICENSE
+// file that was distributed with this source code.
+//
+////////////////////////////////////////////////////////////////////////////
 
 import Foundation
 import RealmSwift
+import os
 
 /// Protocol to implement on service implementation.
 protocol RealmService {
@@ -19,12 +24,15 @@ protocol RealmService {
 /// Service implementation.
 class RealmServiceImpl: RealmService {
     
+    let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "offline")
     private(set) var localRealm: Realm?
     
+    /// Custom initialisation.
     init() {
         openRealm()
     }
-
+    
+    /// Open local database.
     private func openRealm() {
         do {
             let config = Realm.Configuration(schemaVersion: 1, migrationBlock: { migration, oldSchemaVersion in
@@ -37,36 +45,42 @@ class RealmServiceImpl: RealmService {
 
             localRealm = try Realm()
         } catch {
-            print("Error opening Realm", error)
+            logger.error("📚 Offline - Initialisation error: \(error.localizedDescription)")
         }
     }
     
+    /// Add movie to local database.
+    /// - Parameter movie: Movie to be added.
     func addMovie(movie: Movie) {
         if let localRealm = localRealm {
             do {
                 try localRealm.write {
                     localRealm.add(movie, update: .modified)
-                    print("Added new movie to Realm!")
+                    logger.info("📚 Offline - Added new movie - ID: \(movie.id)")
                 }
             } catch {
-                print("Error adding movie to Realm", error)
+                logger.error("📚 Offline - Error adding movie: \(error.localizedDescription)")
             }
         }
     }
     
+    /// Add a list of movies to local database.
+    /// - Parameter movies: List of movies to be added.
     func addMovies(movies: [Movie]) {
         if let localRealm = localRealm {
             do {
                 try localRealm.write {
                     localRealm.add(movies, update: .modified)
-                    print("Added list of movies to Realm!")
+                    logger.info("📚 Offline - Added list of movies - Count: \(movies.count)")
                 }
             } catch {
-                print("Error adding list of movies to Realm", error)
+                logger.error("📚 Offline - Error adding list of movies - \(error.localizedDescription)")
             }
         }
     }
     
+    /// Get movies from local database.
+    /// - Returns: List of saved movies.
     func getMovies() -> [Movie] {
         var movies: [Movie] = []
         if let localRealm = localRealm {
@@ -78,6 +92,8 @@ class RealmServiceImpl: RealmService {
         return movies
     }
     
+    /// Delete movie from local database.
+    /// - Parameter id: Movie identifier.
     func deleteMovie(id: Int) {
         if let localRealm = localRealm {
             let allMovies = localRealm.objects(Movie.self)
@@ -87,10 +103,10 @@ class RealmServiceImpl: RealmService {
             do {
                 try localRealm.write {
                     localRealm.delete(movie)
-                    print("Movie deleted from Realm")
+                    logger.info("📚 Offline - Movie deleted - ID: \(id)")
                 }
             } catch {
-                print("Error deleting movie", error)
+                logger.error("📚 Offline - Error deleting movie - \(error.localizedDescription)")
             }
 
         }

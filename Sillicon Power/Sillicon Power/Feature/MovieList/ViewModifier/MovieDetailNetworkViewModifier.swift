@@ -28,7 +28,7 @@ struct MovieDetailNetworkViewModifier: ViewModifier {
 
 extension View {
     
-    /// Apply header style to any view.
+    /// Apply network style to any view.
     /// - Returns: New view.
     func applyNetworkStyle() -> some View {
         self.modifier(MovieDetailNetworkViewModifier())

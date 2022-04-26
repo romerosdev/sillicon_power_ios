@@ -21,6 +21,7 @@ struct Sillicon_PowerApp: App {
     
     var body: some Scene {
         
+        // Store images in cache (offline mode)
         let urlImageService = URLImageService(fileStore: URLImageFileStore(),
                                               inMemoryStore: URLImageInMemoryStore())
         
