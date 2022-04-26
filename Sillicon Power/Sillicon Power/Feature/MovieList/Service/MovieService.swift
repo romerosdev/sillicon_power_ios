@@ -11,6 +11,7 @@
 
 import Foundation
 import Combine
+import os
 
 /// Protocol to implement on service implementation.
 protocol MovieService {
@@ -21,6 +22,8 @@ protocol MovieService {
 
 /// Service implementation.
 struct MovieServiceImpl: MovieService {
+    
+    let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "network")
     
     /// Get the system wide configuration information.
     /// - Returns: Response with configuration information.
@@ -35,6 +38,7 @@ struct MovieServiceImpl: MovieService {
         urlComps?.queryItems = queryItems
         
         guard let url = urlComps?.url else {
+            logger.error("📚 API - Invalid request")
             throw APIError.invalidRequestError
         }
         
@@ -44,12 +48,15 @@ struct MovieServiceImpl: MovieService {
             
             try handleErrors(data: data, response: response)
             
-            let decoder = JSONDecoder()
-            return try decoder.decode(ConfigurationResponse.self, from: data)
+            let configResponse = try JSONDecoder().decode(ConfigurationResponse.self, from: data)
+            logger.info("📚 API - Successfull response 🚀 - getConfiguration()")
+            return configResponse
             
         } catch let error as DecodingError {
+            logger.error("📚 API - Decoding error: \(error.localizedDescription)")
             throw APIError.decodingError(error)
         } catch let error as URLError {
+            logger.error("📚 API - Transport error: \(error.localizedDescription)")
             throw APIError.transportError(error)
         }
     }
@@ -72,6 +79,7 @@ struct MovieServiceImpl: MovieService {
         urlComps?.queryItems = queryItems
         
         guard let url = urlComps?.url else {
+            logger.error("📚 API - Invalid request")
             throw APIError.invalidRequestError
         }
         
@@ -81,12 +89,15 @@ struct MovieServiceImpl: MovieService {
             
             try handleErrors(data: data, response: response)
             
-            let decoder = JSONDecoder()
-            return try decoder.decode(MovieResponse.self, from: data)
+            let movieResponse = try JSONDecoder().decode(MovieResponse.self, from: data)
+            logger.info("📚 API - Successfull response 🚀 - getMovies()")
+            return movieResponse
             
         } catch let error as DecodingError {
+            logger.error("📚 API - Decoding error: \(error.localizedDescription)")
             throw APIError.decodingError(error)
         } catch let error as URLError {
+            logger.error("📚 API - Transport error: \(error.localizedDescription)")
             throw APIError.transportError(error)
         }
     }
@@ -108,6 +119,7 @@ struct MovieServiceImpl: MovieService {
         urlComps?.queryItems = queryItems
         
         guard let url = urlComps?.url else {
+            logger.error("📚 API - Invalid request")
             throw APIError.invalidRequestError
         }
         
@@ -117,12 +129,15 @@ struct MovieServiceImpl: MovieService {
             
             try handleErrors(data: data, response: response)
             
-            let decoder = JSONDecoder()
-            return try decoder.decode(Movie.self, from: data)
+            let movieResponse = try JSONDecoder().decode(Movie.self, from: data)
+            logger.info("📚 API - Successfull response 🚀 - getMovieDetail(id: \(id))")
+            return movieResponse
             
         } catch let error as DecodingError {
+            logger.error("📚 API - Decoding error: \(error.localizedDescription)")
             throw APIError.decodingError(error)
         } catch let error as URLError {
+            logger.error("📚 API - Transport error: \(error.localizedDescription)")
             throw APIError.transportError(error)
         }
     }
@@ -133,6 +148,7 @@ struct MovieServiceImpl: MovieService {
     ///   - response: Reveived response.
     private func handleErrors(data: Data, response: URLResponse) throws {
         guard let urlResponse = response as? HTTPURLResponse else {
+            logger.error("📚 API - Invalid response")
             throw APIError.invalidResponse
         }
         
@@ -140,8 +156,10 @@ struct MovieServiceImpl: MovieService {
             if (400..<500) ~= urlResponse.statusCode {
                 let decoder = JSONDecoder()
                 let apiError = try decoder.decode(APIErrorMessage.self, from: data)
+                logger.error("📚 API - Error response 🔥 - Status code: \(apiError.statusCode) Reason: \(apiError.statusMsg)")
                 throw APIError.validationError(statusCode: urlResponse.statusCode, reason: apiError.statusMsg)
             } else if (500..<600) ~= urlResponse.statusCode {
+                logger.error("📚 API - Error response 🔥 - Status code: \(urlResponse.statusCode)")
                 throw APIError.serverError(statusCode: urlResponse.statusCode)
             }
         }

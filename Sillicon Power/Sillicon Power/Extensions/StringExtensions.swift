@@ -12,7 +12,6 @@
 import Foundation
 
 extension String {
-    
     /// Returns a localized string, with an optional comment for translators.
     /// - Parameter comment: Optional comment for translators.
     /// - Returns: Localized string.

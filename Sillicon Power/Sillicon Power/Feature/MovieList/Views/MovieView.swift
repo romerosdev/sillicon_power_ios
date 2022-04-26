@@ -54,7 +54,7 @@ struct MoviePosterPlaceholderView: View {
                 .aspectRatio(contentMode: .fill)
             VStack() {
                 Spacer()
-                Text(movie.name ?? "")
+                Text(movie.name ?? movie.originalName ?? "")
                     .foregroundColor(.gray)
                     .multilineTextAlignment(.center)
                     .padding(.bottom, 16)
