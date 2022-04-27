@@ -16,8 +16,10 @@ struct SettingsView: View {
     
     // MARK: - Properties
     
+    @Binding var darkModeEnabled: Bool
+    @Binding var systemThemeEnabled: Bool
+    
     @EnvironmentObject var languageSettings: LanguageSettings
-    @Environment(\.openURL) var openURL
     @State var selectedLanguage: String
     private let languages = ["en", "es", "fr", "it"]
     
@@ -39,6 +41,28 @@ struct SettingsView: View {
                     }
                 }
                 
+                Section(header: Text("DISPLAY".localized().uppercased()),
+                        footer: Text("DISPLAY_FOOTER".localized())) {
+                    Toggle(isOn: $darkModeEnabled) {
+                        Text("DISPLAY_DARK_MODE".localized())
+                    }
+                    .onChange(of: darkModeEnabled) { _ in
+                        SystemThemeManager
+                            .shared
+                            .handleTheme(darkMode: darkModeEnabled,
+                                         system: systemThemeEnabled)
+                    }
+                    Toggle(isOn: $systemThemeEnabled) {
+                        Text("DISPLAY_SYSTEM_MODE".localized())
+                    }
+                    .onChange(of: systemThemeEnabled) { _ in
+                        SystemThemeManager
+                            .shared
+                            .handleTheme(darkMode: darkModeEnabled,
+                                         system: systemThemeEnabled)
+                    }
+                }
+                
                 Section(header: Text("ABOUT".localized())) {
                     HStack {
                         Text("VERSION".localized())
@@ -48,25 +72,22 @@ struct SettingsView: View {
                 }
                 
                 Section {
-                    Label("The Movie DB", systemImage: "link")
-                        .onTapGesture {
-                            guard let url = URL(string: "https://www.themoviedb.org") else {
-                                return
-                            }
-                            openURL(url)
-                        }
+                    Link(destination: URL(string: "https://www.themoviedb.org")!) {
+                        Label("The Movie DB", systemImage: "link")
+                    }
                 }
-                .foregroundColor(.black)
+                .foregroundColor(Theme.textColor)
                 .font(.system(size: 16, weight: .semibold))
             }
-            .navigationTitle("SETTINGS_TITLE".localized())
-            .transition(.slide)
+            .navigationBarTitle("SETTINGS_TITLE".localized())
         }
     }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView(selectedLanguage: "en")
+        SettingsView(darkModeEnabled: .constant(false),
+                     systemThemeEnabled: .constant(false),
+                     selectedLanguage: "en")
     }
 }

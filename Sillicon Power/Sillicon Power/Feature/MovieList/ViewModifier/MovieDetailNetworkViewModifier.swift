@@ -19,12 +19,8 @@ struct MovieDetailNetworkViewModifier: ViewModifier {
         content
             .frame(width: 60, height: 60)
             .padding(5)
-            .cornerRadius(5)
-            .overlay(
-                RoundedRectangle(cornerRadius: 5)
-                    .stroke(Color.accentColor, lineWidth: 2)
-            )
-            .padding(.leading, 5)
+            .background(Theme.networkBackgroundColor)
+            .clipShape(RoundedRectangle(cornerRadius: 5))
     }
 }
 

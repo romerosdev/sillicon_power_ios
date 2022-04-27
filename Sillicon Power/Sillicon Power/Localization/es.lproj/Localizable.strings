@@ -26,5 +26,9 @@
 
 "SETTINGS_TITLE" = "Ajustes";
 "LANGUAGE" = "Idioma";
+"DISPLAY" = "Pantalla";
+"DISPLAY_FOOTER" = "La configuración del sistema anulará el modo oscuro y utilizará el tema del dispositivo actual";
+"DISPLAY_DARK_MODE" = "Modo oscuro";
+"DISPLAY_SYSTEM_MODE" = "Usar la configuración del sistema";
 "ABOUT" = "Sobre los datos";
 "VERSION" = "Versión";

@@ -26,5 +26,9 @@
 
 "SETTINGS_TITLE" = "Impostazioni";
 "LANGUAGE" = "Linguaggio";
+"DISPLAY" = "Schermo";
+"DISPLAY_FOOTER" = "Le impostazioni di sistema sovrascriveranno la modalità oscura e utilizzeranno il tema del dispositivo corrente";
+"DISPLAY_DARK_MODE" = "Modalità scura";
+"DISPLAY_SYSTEM_MODE" = "Usa le impostazioni di sistema";
 "ABOUT" = "Informazioni sui dati";
 "VERSION" = "Versione";

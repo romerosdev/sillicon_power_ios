@@ -26,6 +26,8 @@
 		0F6FD8332816A87200E1D3C7 /* MovieDetailHeaderViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6FD8322816A87200E1D3C7 /* MovieDetailHeaderViewModifier.swift */; };
 		0F6FD83D2816ACDC00E1D3C7 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6FD83C2816ACDC00E1D3C7 /* StringExtensions.swift */; };
 		0F8A4EDF281482CC009EC11D /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8A4EDE281482CC009EC11D /* MovieView.swift */; };
+		0FA19B2628198EE500243A80 /* SystemThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA19B2528198EE500243A80 /* SystemThemeManager.swift */; };
+		0FA19B282819A2BB00243A80 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA19B272819A2BB00243A80 /* Theme.swift */; };
 		0FA9D54A2812EF0E00C2FBD8 /* Sillicon_PowerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9D5492812EF0E00C2FBD8 /* Sillicon_PowerApp.swift */; };
 		0FA9D54E2812EF0E00C2FBD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FA9D54D2812EF0E00C2FBD8 /* Assets.xcassets */; };
 		0FA9D5512812EF0E00C2FBD8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FA9D5502812EF0E00C2FBD8 /* Preview Assets.xcassets */; };
@@ -79,6 +81,8 @@
 		0F6FD8322816A87200E1D3C7 /* MovieDetailHeaderViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailHeaderViewModifier.swift; sourceTree = "<group>"; };
 		0F6FD83C2816ACDC00E1D3C7 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		0F8A4EDE281482CC009EC11D /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
+		0FA19B2528198EE500243A80 /* SystemThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemThemeManager.swift; sourceTree = "<group>"; };
+		0FA19B272819A2BB00243A80 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		0FA9D5462812EF0E00C2FBD8 /* Sillicon Power.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sillicon Power.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FA9D5492812EF0E00C2FBD8 /* Sillicon_PowerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sillicon_PowerApp.swift; sourceTree = "<group>"; };
 		0FA9D54D2812EF0E00C2FBD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -159,6 +163,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		0FA19B2428198EB600243A80 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				0FA19B2528198EE500243A80 /* SystemThemeManager.swift */,
+				0FA19B272819A2BB00243A80 /* Theme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 		0FA9D53D2812EF0E00C2FBD8 = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +197,7 @@
 			children = (
 				0F666FE02816CF8D003AA615 /* LaunchScreen.storyboard */,
 				0F5801DE281981CF00816E18 /* Localization */,
+				0FA19B2428198EB600243A80 /* Theme */,
 				0FA9D5812812FD3000C2FBD8 /* Extensions */,
 				0FA9D5862813F1FB00C2FBD8 /* API */,
 				0FA9D58928140E2D00C2FBD8 /* Feature */,
@@ -464,7 +478,9 @@
 				0F8A4EDF281482CC009EC11D /* MovieView.swift in Sources */,
 				0FA9D5792812F78B00C2FBD8 /* APIError.swift in Sources */,
 				0FA9D54A2812EF0E00C2FBD8 /* Sillicon_PowerApp.swift in Sources */,
+				0FA19B282819A2BB00243A80 /* Theme.swift in Sources */,
 				0F6FD829281594D000E1D3C7 /* MovieListView.swift in Sources */,
+				0FA19B2628198EE500243A80 /* SystemThemeManager.swift in Sources */,
 				0FA9D5882813F21800C2FBD8 /* TheMovieDBAPI.swift in Sources */,
 				0FA9D5832812FD3F00C2FBD8 /* ArrayExtension.swift in Sources */,
 				0F666FEA2816F56F003AA615 /* RealmService.swift in Sources */,

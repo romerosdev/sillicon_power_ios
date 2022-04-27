@@ -61,7 +61,7 @@ struct ErrorView: View {
                 VStack(spacing: 11) {
                     if case APIError.transportError(_) = error {
                         Text("ERR_NO_INTERNET_TITLE".localized())
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Theme.textColor)
                             .font(.system(size: 20, weight: .regular))
                     }
                     Text(error.localizedDescription)

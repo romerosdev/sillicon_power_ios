@@ -28,21 +28,21 @@ struct MovieListView: View {
     // MARK: - UI
     
     var body: some View {
-        Group {
-            switch vm.state {
-                
-            case .loading:
-                AlertToast(type: .loading)
-                
-            case .failed(let error):
-                ErrorView(error: error) {
-                    Task {
-                        await vm.getMovies()
+        NavigationView {
+            Group {
+                switch vm.state {
+                    
+                case .loading:
+                    AlertToast(type: .loading)
+                    
+                case .failed(let error):
+                    ErrorView(error: error) {
+                        Task {
+                            await vm.getMovies()
+                        }
                     }
-                }
-                
-            default:
-                NavigationView {
+                    
+                default:
                     ScrollView {
                         LazyVGrid(columns: columns, spacing: 10) {
                             ForEach(vm.content.movies, id:\.id) { movie in
@@ -65,11 +65,16 @@ struct MovieListView: View {
                         .padding(16)
                     }
                     .toast(isPresenting: $vm.hasError) {
-                        AlertToast(displayMode: .banner(.pop), type: .systemImage("exclamationmark.circle", Color.white), title: vm.error?.localizedDescription, style: .style(backgroundColor: Color.black.opacity(0.5), titleColor: Color.white))
+                        AlertToast(displayMode: .banner(.pop),
+                                   type: .systemImage("exclamationmark.circle",
+                                                      Theme.textColor),
+                                   title: vm.error?.localizedDescription,
+                                   style: .style(backgroundColor: Theme.toastBackgroundColor,
+                                                 titleColor: Theme.textColor))
                     }
-                    .navigationTitle("MOVIE_LIST_TITLE".localized())
                 }
             }
+            .navigationBarTitle("MOVIE_LIST_TITLE".localized())
         }
         .onAppear {
             Task {

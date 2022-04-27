@@ -26,5 +26,9 @@
 
 "SETTINGS_TITLE" = "Settings";
 "LANGUAGE" = "Language";
+"DISPLAY" = "Display";
+"DISPLAY_FOOTER" = "System settings will override Dark Mode and use the current device theme";
+"DISPLAY_DARK_MODE" = "Dark mode";
+"DISPLAY_SYSTEM_MODE" = "Use system settings";
 "ABOUT" = "About the data";
 "VERSION" = "Version";

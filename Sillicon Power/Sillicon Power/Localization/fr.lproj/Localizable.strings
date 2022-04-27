@@ -26,5 +26,9 @@
 
 "SETTINGS_TITLE" = "Réglages";
 "LANGUAGE" = "Langue";
+"DISPLAY" = "Affichage";
+"DISPLAY_FOOTER" = "Les paramètres système remplaceront le mode sombre et utiliseront le thème actuel de l'appareil";
+"DISPLAY_DARK_MODE" = "Mode sombre";
+"DISPLAY_SYSTEM_MODE" = "Utiliser les paramètres système";
 "ABOUT" = "Concernant les données";
 "VERSION" = "Version";

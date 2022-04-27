@@ -16,6 +16,8 @@ struct ContentView: View {
     
     // MARK: - Properties
     
+    @AppStorage("darkModeEnabled") private var darkModeEnabled = false
+    @AppStorage("systemThemeEnabled") private var systemThemeEnabled = false
     @EnvironmentObject var languageSettings: LanguageSettings
     
     // MARK: - UI
@@ -28,11 +30,19 @@ struct ContentView: View {
                     Image(systemName: "books.vertical")
                     Text("Shows")
                 }
-            SettingsView(selectedLanguage: languageSettings.selectedLanguage.rawValue)
+            SettingsView(darkModeEnabled: $darkModeEnabled,
+                         systemThemeEnabled: $systemThemeEnabled,
+                         selectedLanguage: languageSettings.selectedLanguage.rawValue)
                 .tabItem {
                     Image(systemName: "gearshape")
                     Text("SETTINGS_TITLE".localized())
                 }
+        }
+        .onAppear {
+            SystemThemeManager
+                .shared
+                .handleTheme(darkMode: darkModeEnabled,
+                             system: systemThemeEnabled)
         }
     }
 }
