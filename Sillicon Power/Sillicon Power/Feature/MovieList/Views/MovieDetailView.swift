@@ -26,7 +26,7 @@ struct MovieDetailView: View {
     var body: some View {
         ZStack {
             ScrollView {
-                LazyVStack(spacing: 15) {
+                VStack(spacing: 15) {
                     if let baseUrl = baseUrl, let path = movie.backdropPath, let url = URL(string: baseUrl + "/w780" + path) {
                         URLImage(url, identifier: url.absoluteString) {
                             // This view is displayed before download starts
@@ -43,6 +43,7 @@ struct MovieDetailView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .applyHeaderStyle(movie: movie)
+                                .clipped()
                         }
                     } else {
                         // No url from API
