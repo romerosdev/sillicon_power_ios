@@ -14,13 +14,18 @@ import SwiftUI
 
 struct MovieListView: View {
     
+    // MARK: - Properties
+    
     @StateObject var vm: MovieViewModelImpl
+    private var columns: [GridItem] = Array(repeating: .init(.adaptive(minimum: 150)), count: 2)
+    
+    // MARK: - Initialisation
     
     init() {
         _vm = StateObject(wrappedValue: MovieViewModelImpl(service: MovieServiceImpl(), offlineService: RealmServiceImpl()))
     }
     
-    var columns: [GridItem] = Array(repeating: .init(.adaptive(minimum: 150)), count: 2)
+    // MARK: - UI
     
     var body: some View {
         Group {

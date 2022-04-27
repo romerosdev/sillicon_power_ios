@@ -12,7 +12,9 @@
 import SwiftUI
 
 struct MovieDetailNetworkViewModifier: ViewModifier {
-
+    
+    // MARK: - UI
+    
     func body(content: Content) -> some View {
         content
             .frame(width: 60, height: 60)

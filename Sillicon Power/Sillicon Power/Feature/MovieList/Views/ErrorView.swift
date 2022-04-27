@@ -21,9 +21,13 @@ class ErrorSettings: ObservableObject {
 
 struct ErrorView: View {
     
+    // MARK: - Properties
+    
     @StateObject var settings = ErrorSettings()
     private let handler: EmptyStateActionHandler
     private var error: Error
+    
+    // MARK: - Initialisation
     
     internal init(
         error: Error,
@@ -31,6 +35,8 @@ struct ErrorView: View {
             self.error = error
             self.handler = handler
         }
+    
+    // MARK: - UI
     
     var body: some View {
         ZStack {

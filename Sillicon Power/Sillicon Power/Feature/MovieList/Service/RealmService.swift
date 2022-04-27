@@ -24,8 +24,12 @@ protocol RealmService {
 /// Service implementation.
 class RealmServiceImpl: RealmService {
     
+    // MARK: - Properties
+    
     let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "offline")
     private(set) var localRealm: Realm?
+    
+    // MARK: - Initialisation methods
     
     /// Custom initialisation.
     init() {
@@ -40,14 +44,16 @@ class RealmServiceImpl: RealmService {
                     // Do something, usually updating the schema's variables here
                 }
             })
-
+            
             Realm.Configuration.defaultConfiguration = config
-
+            
             localRealm = try Realm()
         } catch {
             logger.error("📚 Offline - Initialisation error: \(error.localizedDescription)")
         }
     }
+    
+    // MARK: - Realm CRUD methods
     
     /// Add movie to local database.
     /// - Parameter movie: Movie to be added.
@@ -99,7 +105,7 @@ class RealmServiceImpl: RealmService {
             let allMovies = localRealm.objects(Movie.self)
             let movie = allMovies.filter("id == \(id)")
             guard !movie.isEmpty else { return }
-
+            
             do {
                 try localRealm.write {
                     localRealm.delete(movie)
@@ -108,7 +114,7 @@ class RealmServiceImpl: RealmService {
             } catch {
                 logger.error("📚 Offline - Error deleting movie - \(error.localizedDescription)")
             }
-
+            
         }
     }
 }

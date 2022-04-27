@@ -14,10 +14,14 @@ import URLImage
 
 struct MovieDetailView: View {
     
+    // MARK: - Properties
+    
     @Environment(\.presentationMode) private var presentationMode
     @Environment(\.openURL) var openURL
     let movie: Movie
     let baseUrl = UserDefaults.standard.string(forKey: "secure_base_url")
+    
+    // MARK: - UI
     
     var body: some View {
         ZStack {
@@ -174,7 +178,11 @@ struct MovieDetailView: View {
 
 struct MovieBackdropPlaceholderView: View {
     
+    // MARK: - Properties
+    
     let movie: Movie
+    
+    // MARK: - UI
     
     var body: some View {
         Image("movie-backdrop-placeholder")

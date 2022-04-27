@@ -24,6 +24,8 @@ protocol MovieViewModel {
 @MainActor
 final class MovieViewModelImpl: ObservableObject, MovieViewModel {
     
+    // MARK: - Enums
+    
     /// Used to control view states (related to networking calls)
     enum State {
         case na
@@ -31,6 +33,8 @@ final class MovieViewModelImpl: ObservableObject, MovieViewModel {
         case success(data: MovieContent)
         case failed(error: Error)
     }
+    
+    // MARK: - Properties
     
     // Combine properties
     @Published private(set) var state: State = .na
@@ -47,6 +51,8 @@ final class MovieViewModelImpl: ObservableObject, MovieViewModel {
     // Content used on pagination feature
     private(set) var content = MovieContent()
     
+    // MARK: - Initialisation
+    
     /// View model initialisation.
     /// - Parameter service: Movie service instance.
     /// - Parameter offlineService: Movie offline service instance.
@@ -54,6 +60,8 @@ final class MovieViewModelImpl: ObservableObject, MovieViewModel {
         self.service = service
         self.offlineService = offlineService
     }
+    
+    // MARK: - Methods
     
     /// Get the system wide configuration information.
     func getConfiguration() async {

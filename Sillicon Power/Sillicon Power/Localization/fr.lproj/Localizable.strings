@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  Sillicon Power
+
+  Created by Raul Romero on 25/4/22.
+  
+*/
+"locale" = "fr";
+
+"en" = "Anglais";
+"es" = "Espagnol";
+"fr" = "Français";
+"it" = "Italien";
+
+"ERR_NO_INTERNET_TITLE" = "Vous êtes offline";
+"ERR_NO_INTERNET_DESCRIPTION" = "Merci de bien vouloir vérifier votre connexion à internet et de réessayer";
+"ERR_TRY_AGAIN" = "Réessayer";
+"MSG_SERVICE_NOT_AVAILABLE" = "Ce service est temporairement indisponible. Réessayez plus tard.";
+
+"MOVIE_LIST_TITLE" = "Shows populaires";
+"SEASONS" = "saisons";
+"EPISODES" = "épisodes";
+"NETWORKS" = "Où voir";
+"GENRES" = "Genres";
+"SYNOPSIS" = "Résumé";
+
+"SETTINGS_TITLE" = "Réglages";
+"LANGUAGE" = "Langue";
+"ABOUT" = "Concernant les données";
+"VERSION" = "Version";

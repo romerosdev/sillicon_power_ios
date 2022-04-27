@@ -12,12 +12,34 @@
 import SwiftUI
 import URLImage
 import URLImageStore
+import LanguageManagerSwiftUI
 
 @main
 struct Sillicon_PowerApp: App {
     
+    // MARK: - Properties
+    
+    private(set) var language: Languages = .en
     let urlImageService = URLImageService(fileStore: URLImageFileStore(),
                                           inMemoryStore: URLImageInMemoryStore())
+    
+    // MARK: - Initialisation
+    
+    init() {
+        // Multilanguage setup (independent from Apple standard one)
+        if let lang = UserDefaults.standard.string(forKey: "CustomLanguage") {
+            // Get persisted language.
+            language = Languages(rawValue: lang)!
+        } else {
+            // Get iPhone language as initial value.
+            let lang = "locale".localized()
+            UserDefaults.standard.set(lang, forKey: "CustomLanguage")
+            language = Languages(rawValue: lang)!
+        }
+        Bundle.swizzleLocalization()
+    }
+    
+    // MARK: - UI
     
     var body: some Scene {
         
@@ -26,8 +48,11 @@ struct Sillicon_PowerApp: App {
                                               inMemoryStore: URLImageInMemoryStore())
         
         WindowGroup {
-            MovieListView()
-                .environment(\.urlImageService, urlImageService)
+            LanguageManagerView(language) {
+                ContentView()
+                    .environment(\.urlImageService, urlImageService)
+                    .transition(.slide)
+            }
         }
     }
 }

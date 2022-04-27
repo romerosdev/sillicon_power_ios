@@ -13,6 +13,8 @@ import SwiftUI
 
 struct MovieDetailHeaderViewModifier: ViewModifier {
     
+    // MARK: - Properties
+    
     let movie: Movie
     
     static let dateFormatter: DateFormatter = {
@@ -20,6 +22,8 @@ struct MovieDetailHeaderViewModifier: ViewModifier {
         formatter.dateFormat = "MMM dd, yyyy"
         return formatter
     }()
+    
+    // MARK: - UI
     
     func body(content: Content) -> some View {
         ZStack {

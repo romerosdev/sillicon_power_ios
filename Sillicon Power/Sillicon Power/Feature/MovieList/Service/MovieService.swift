@@ -23,7 +23,11 @@ protocol MovieService {
 /// Service implementation.
 struct MovieServiceImpl: MovieService {
     
+    // MARK: - Properties
+    
     let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "network")
+    
+    // MARK: - API methods (GET)
     
     /// Get the system wide configuration information.
     /// - Returns: Response with configuration information.
@@ -141,6 +145,8 @@ struct MovieServiceImpl: MovieService {
             throw APIError.transportError(error)
         }
     }
+    
+    // MARK: - Internal methods
     
     /// Handle common API errors.
     /// - Parameters:
