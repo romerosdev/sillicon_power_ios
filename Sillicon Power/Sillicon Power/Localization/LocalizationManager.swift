@@ -14,10 +14,15 @@ import UIKit
 
 class LocalizationManager {
     
+    // MARK: - Singleton pattern
     static let shared = LocalizationManager()
     
     private init() {}
     
+    // MARK: - Methods
+    
+    /// Handle user language actions, if needed.
+    /// - Parameter language: New user language
     func handleUserLanguage(language: String) {
         
     }
