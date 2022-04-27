@@ -14,10 +14,18 @@ import UIKit
 
 class SystemThemeManager {
     
+    // MARK: - Singleton pattern
     static let shared = SystemThemeManager()
     
     private init() {}
     
+    // MARK: - Methods
+    
+    
+    /// Handle app theme (dark or light).
+    /// - Parameters:
+    ///   - darkMode: Dark mode enabled.
+    ///   - system: System theme enabled.
     func handleTheme(darkMode: Bool, system: Bool) {
         
         // Handle System

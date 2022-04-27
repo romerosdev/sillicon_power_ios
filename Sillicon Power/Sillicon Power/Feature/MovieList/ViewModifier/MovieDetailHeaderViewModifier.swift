@@ -36,7 +36,7 @@ struct MovieDetailHeaderViewModifier: ViewModifier {
                                    endPoint: .bottom)
                 )
         }
-        .frame(height: UIScreen.main.bounds.width * (UIDevice.current.orientation.isPortrait ? 0.56 : 0.3 ))
+        .frame(height: UIScreen.main.bounds.width * (UIScreen.main.bounds.width < 500 ? 0.56 : 0.3 ))
         .overlay(
             VStack(spacing: 10) {
                 Spacer()
