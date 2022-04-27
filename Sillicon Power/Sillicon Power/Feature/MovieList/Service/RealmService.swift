@@ -19,6 +19,7 @@ protocol RealmService {
     func addMovies(movies: [Movie])
     func getMovies() -> [Movie]
     func deleteMovie(id: Int)
+    func deleteAll()
 }
 
 /// Service implementation.
@@ -113,6 +114,21 @@ class RealmServiceImpl: RealmService {
                 }
             } catch {
                 logger.error("📚 Offline - Error deleting movie - \(error.localizedDescription)")
+            }
+            
+        }
+    }
+    
+    /// Delete all movies from local database.
+    func deleteAll() {
+        if let localRealm = localRealm {
+            do {
+                try localRealm.write {
+                    localRealm.deleteAll()
+                    logger.info("📚 Offline - All movies deleted")
+                }
+            } catch {
+                logger.error("📚 Offline - Error deleting all movies - \(error.localizedDescription)")
             }
             
         }

@@ -10,7 +10,6 @@
 ////////////////////////////////////////////////////////////////////////////
 
 import SwiftUI
-import LanguageManagerSwiftUI
 
 struct SettingsView: View {
     
@@ -18,10 +17,7 @@ struct SettingsView: View {
     
     @Binding var darkModeEnabled: Bool
     @Binding var systemThemeEnabled: Bool
-    
-    @EnvironmentObject var languageSettings: LanguageSettings
-    @State var selectedLanguage: String
-    private let languages = ["en", "es", "fr", "it"]
+    @Binding var userLanguage: String
     
     // MARK: - UI
     
@@ -30,14 +26,16 @@ struct SettingsView: View {
         NavigationView {
             Form {
                 Section(header: Text("LANGUAGE".localized().uppercased())) {
-                    Picker("LANGUAGE".localized(), selection: $selectedLanguage) {
-                        ForEach(languages, id: \.self) {
-                            Text($0.localized())
+                    Picker("LANGUAGE".localized(),
+                           selection: $userLanguage) {
+                        ForEach(Languages.allCases, id: \.rawValue) {
+                            Text($0.rawValue.localized())
                         }
                     }
-                    .onChange(of: selectedLanguage) { lang in
-                        UserDefaults.standard.set(lang, forKey: "CustomLanguage")
-                        languageSettings.selectedLanguage = Languages(rawValue: lang)!
+                    .onChange(of: userLanguage) { lang in
+                        LocalizationManager
+                            .shared
+                            .handleUserLanguage(language: userLanguage)
                     }
                 }
                 
@@ -88,6 +86,6 @@ struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView(darkModeEnabled: .constant(false),
                      systemThemeEnabled: .constant(false),
-                     selectedLanguage: "en")
+                     userLanguage: .constant("en"))
     }
 }

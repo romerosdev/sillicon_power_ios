@@ -55,7 +55,7 @@ extension Bundle {
     ///   - table: Strings table.
     /// - Returns: Localized string.
     @objc private func customLocalizedString(forKey key: String,value: String?, table: String?) -> String {
-        guard let language = UserDefaults.standard.string(forKey: "CustomLanguage"),
+        guard let language = UserDefaults.standard.string(forKey: "userLanguage"),
               let bundlePath = Bundle.main.path(forResource: language, ofType: "lproj"),
               let bundle = Bundle(path: bundlePath) else {
             return Bundle.main.customLocalizedString(forKey: key, value: value, table: table)

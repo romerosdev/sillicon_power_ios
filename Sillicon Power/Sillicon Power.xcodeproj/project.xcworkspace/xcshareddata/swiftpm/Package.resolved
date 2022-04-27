@@ -10,15 +10,6 @@
       }
     },
     {
-      "identity" : "languagemanager-swiftui",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Abedalkareem/LanguageManager-SwiftUI",
-      "state" : {
-        "revision" : "ebb7493a76653852f96e906aa908b1455e40c6ce",
-        "version" : "0.0.5"
-      }
-    },
-    {
       "identity" : "realm-core",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/realm/realm-core",

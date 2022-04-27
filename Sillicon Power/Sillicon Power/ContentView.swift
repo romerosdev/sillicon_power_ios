@@ -10,7 +10,6 @@
 ////////////////////////////////////////////////////////////////////////////
 
 import SwiftUI
-import LanguageManagerSwiftUI
 
 struct ContentView: View {
     
@@ -18,7 +17,7 @@ struct ContentView: View {
     
     @AppStorage("darkModeEnabled") private var darkModeEnabled = false
     @AppStorage("systemThemeEnabled") private var systemThemeEnabled = false
-    @EnvironmentObject var languageSettings: LanguageSettings
+    @AppStorage("userLanguage") private var userLanguage = "en"
     
     // MARK: - UI
     
@@ -32,7 +31,7 @@ struct ContentView: View {
                 }
             SettingsView(darkModeEnabled: $darkModeEnabled,
                          systemThemeEnabled: $systemThemeEnabled,
-                         selectedLanguage: languageSettings.selectedLanguage.rawValue)
+                         userLanguage: $userLanguage)
                 .tabItem {
                     Image(systemName: "gearshape")
                     Text("SETTINGS_TITLE".localized())
@@ -43,6 +42,9 @@ struct ContentView: View {
                 .shared
                 .handleTheme(darkMode: darkModeEnabled,
                              system: systemThemeEnabled)
+            LocalizationManager
+                .shared
+                .handleUserLanguage(language: userLanguage)
         }
     }
 }
