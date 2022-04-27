@@ -10,6 +10,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 import Foundation
+import RealmSwift
 
 /// Formatter for ISO8601 (year-month-day).
 let iso8601Formatter: DateFormatter = {
@@ -22,28 +23,25 @@ let iso8601Formatter: DateFormatter = {
 }()
 
 // MARK: - Movie
-struct Movie: Codable, Identifiable, Equatable, Hashable {
-    let id: Int
-    let firstAirDate: String?
-    let name: String?
-    let originalName: String?
-    let originalLanguage: String?
-    let overview: String?
-    let genreIDS: [Int]?
-    let originCountry: [String]?
-    let posterPath: String?
-    let backdropPath: String?
-    let popularity: Double?
-    let voteCount: Int?
-    let voteAverage: Double?
+class Movie: Object, Codable, Identifiable  {
+    @Persisted(primaryKey: true) var id: Int
+    @Persisted var firstAirDate: String?
+    @Persisted var name: String?
+    @Persisted var originalName: String?
+    @Persisted var originalLanguage: String?
+    @Persisted var overview: String?
+    @Persisted var posterPath: String?
+    @Persisted var backdropPath: String?
+    @Persisted var popularity: Double?
+    @Persisted var voteCount: Int?
+    @Persisted var voteAverage: Double?
+    @Persisted var seasons: Int?
+    @Persisted var episodes: Int?
+    @Persisted var homepage: String?
     
-    let networks: [Network]?
-    let episodeRunTime: [Int]?
-    let genres: [Genre]?
-    let languages: [String]?
-    let seasons: Int?
-    let episodes: Int?
-    let homepage: String?
+    var networks: [Network]?
+    var episodeRunTime: [Int]?
+    var genres: [Genre]?
     
     var date: Date? {
         guard let firstAirDate = firstAirDate else { return nil }
@@ -58,25 +56,41 @@ struct Movie: Codable, Identifiable, Equatable, Hashable {
         case originalName = "original_name"
         case originalLanguage = "original_language"
         case overview
-        case genreIDS = "genre_ids"
-        case originCountry = "origin_country"
         case posterPath = "poster_path"
         case backdropPath = "backdrop_path"
         case popularity
         case voteCount = "vote_count"
         case voteAverage = "vote_average"
+        case seasons = "number_of_seasons"
+        case episodes = "number_of_episodes"
+        case homepage
         
         case networks
         case episodeRunTime = "episode_run_time"
         case genres
-        case languages
-        case seasons = "number_of_seasons"
-        case episodes = "number_of_episodes"
-        case homepage
     }
     
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
+    convenience init(id: Int, firstAirDate: String?, name: String?, originalName: String?, originalLanguage: String?, overview: String?, posterPath: String?, backdropPath: String?, popularity: Double?, voteCount: Int?, voteAverage: Double?, seasons: Int?, episodes: Int?, homepage: String?, networks: [Network]?, episodeRunTime: [Int]?, genres: [Genre]?) {
+        self.init()
+        
+        self.id = id
+        self.firstAirDate = firstAirDate
+        self.name = name
+        self.originalName = originalName
+        self.originalLanguage = originalLanguage
+        self.overview = overview
+        self.posterPath = posterPath
+        self.backdropPath = backdropPath
+        self.popularity = popularity
+        self.voteCount = voteCount
+        self.voteAverage = voteAverage
+        self.seasons = seasons
+        self.episodes = episodes
+        self.homepage = homepage
+        
+        self.networks = networks
+        self.episodeRunTime = episodeRunTime
+        self.genres = genres
     }
 }
 
@@ -108,22 +122,21 @@ extension Movie {
               originalName: "Moon Knight",
               originalLanguage: "en",
               overview: "When Steven Grant, a mild-mannered gift-shop employee, becomes plagued with blackouts and memories of another life, he discovers he has dissociative identity disorder and shares a body with mercenary Marc Spector. As Steven/Marc’s enemies converge upon them, they must navigate their complex identities while thrust into a deadly mystery among the powerful gods of Egypt.",
-              genreIDS: [9648, 10759, 10765],
-              originCountry: ["US"],
               posterPath: "/x6FsYvt33846IQnDSFxla9j0RX8.jpg",
               backdropPath: "/tGWTz0aQrTaeGjax5Rlyhz7ImWD.jpg",
               popularity: 8112.226,
               voteCount: 373,
               voteAverage: 8.5,
-              networks: [],
-              episodeRunTime: [47],
-              genres: [
-                Genre(id: 9648, name: "Mystery")
-              ],
-              languages: ["en"],
               seasons: 1,
               episodes: 6,
-              homepage: "https://www.disneyplus.com/series/moon-knight/4S3oOF1knocS"
+              homepage: "https://www.disneyplus.com/series/moon-knight/4S3oOF1knocS",
+              networks: [],
+              episodeRunTime: [
+                47
+              ],
+              genres: [
+                Genre(id: 9648, name: "Mystery")
+              ]
         )
     }
 }

@@ -6,13 +6,29 @@
   
 */
 "locale" = "en";
+
+"en" = "English";
+"es" = "Spanish";
+"fr" = "French";
+"it" = "Italian";
+
 "ERR_NO_INTERNET_TITLE" = "You are offline";
 "ERR_NO_INTERNET_DESCRIPTION" = "Please check your internet connection and try again";
 "ERR_TRY_AGAIN" = "Try again";
 "MSG_SERVICE_NOT_AVAILABLE" = "The service is temporarily unavailable. Please try again later";
+
+"MOVIE_LIST_TITLE" = "Popular shows";
 "SEASONS" = "seasons";
 "EPISODES" = "episodes";
 "NETWORKS" = "Where to watch";
 "GENRES" = "Genres";
 "SYNOPSIS" = "Synopsis";
-"MOVIE_LIST_TITLE" = "Popular shows";
+
+"SETTINGS_TITLE" = "Settings";
+"LANGUAGE" = "Language";
+"DISPLAY" = "Display";
+"DISPLAY_FOOTER" = "System settings will override Dark Mode and use the current device theme";
+"DISPLAY_DARK_MODE" = "Dark mode";
+"DISPLAY_SYSTEM_MODE" = "Use system settings";
+"ABOUT" = "About the data";
+"VERSION" = "Version";

@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  Sillicon Power
+
+  Created by Raul Romero on 25/4/22.
+  
+*/
+"locale" = "es";
+
+"en" = "Inglés";
+"es" = "Español";
+"fr" = "Francés";
+"it" = "Italiano";
+
+"ERR_NO_INTERNET_TITLE" = "Estás offline";
+"ERR_NO_INTERNET_DESCRIPTION" = "Comprueba tu conexión a Internet y vuelve a intentarlo";
+"ERR_TRY_AGAIN" = "Volver a intentar";
+"MSG_SERVICE_NOT_AVAILABLE" = "Este servicio no está disponible temporalmente. Prueba más tarde.";
+
+"MOVIE_LIST_TITLE" = "Shows populares";
+"SEASONS" = "temporadas";
+"EPISODES" = "episodios";
+"NETWORKS" = "Donde ver";
+"GENRES" = "Géneros";
+"SYNOPSIS" = "Sinopsis";
+
+"SETTINGS_TITLE" = "Ajustes";
+"LANGUAGE" = "Idioma";
+"DISPLAY" = "Pantalla";
+"DISPLAY_FOOTER" = "La configuración del sistema anulará el modo oscuro y utilizará el tema del dispositivo actual";
+"DISPLAY_DARK_MODE" = "Modo oscuro";
+"DISPLAY_SYSTEM_MODE" = "Usar la configuración del sistema";
+"ABOUT" = "Sobre los datos";
+"VERSION" = "Versión";

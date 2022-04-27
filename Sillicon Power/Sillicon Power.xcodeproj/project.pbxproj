@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0F32EABA28174E690076D848 /* MovieDetailNetworkViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F32EAB928174E690076D848 /* MovieDetailNetworkViewModifier.swift */; };
+		0F5801E5281981CF00816E18 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0F5801DF281981CF00816E18 /* Localizable.strings */; };
 		0F666FE12816CF8D003AA615 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F666FE02816CF8D003AA615 /* LaunchScreen.storyboard */; };
+		0F666FE62816F557003AA615 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0F666FE52816F557003AA615 /* Realm */; };
+		0F666FE82816F557003AA615 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0F666FE72816F557003AA615 /* RealmSwift */; };
+		0F666FEA2816F56F003AA615 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F666FE92816F56F003AA615 /* RealmService.swift */; };
 		0F6FD816281489C800E1D3C7 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6FD815281489C800E1D3C7 /* Configuration.swift */; };
 		0F6FD8182815483D00E1D3C7 /* CalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6FD8172815483D00E1D3C7 /* CalendarExtensions.swift */; };
 		0F6FD81A28154D6A00E1D3C7 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6FD81928154D6A00E1D3C7 /* ErrorView.swift */; };
@@ -20,8 +24,11 @@
 		0F6FD8302815E32400E1D3C7 /* MovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6FD82F2815E32400E1D3C7 /* MovieResponse.swift */; };
 		0F6FD8332816A87200E1D3C7 /* MovieDetailHeaderViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6FD8322816A87200E1D3C7 /* MovieDetailHeaderViewModifier.swift */; };
 		0F6FD83D2816ACDC00E1D3C7 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6FD83C2816ACDC00E1D3C7 /* StringExtensions.swift */; };
-		0F6FD8492816BA8500E1D3C7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0F6FD8462816BA8500E1D3C7 /* Localizable.strings */; };
 		0F8A4EDF281482CC009EC11D /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8A4EDE281482CC009EC11D /* MovieView.swift */; };
+		0FA19B2628198EE500243A80 /* SystemThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA19B2528198EE500243A80 /* SystemThemeManager.swift */; };
+		0FA19B282819A2BB00243A80 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA19B272819A2BB00243A80 /* Theme.swift */; };
+		0FA19B2E2819B65000243A80 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA19B2D2819B65000243A80 /* Languages.swift */; };
+		0FA19B302819B9C200243A80 /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA19B2F2819B9C200243A80 /* LocalizationManager.swift */; };
 		0FA9D54A2812EF0E00C2FBD8 /* Sillicon_PowerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9D5492812EF0E00C2FBD8 /* Sillicon_PowerApp.swift */; };
 		0FA9D54E2812EF0E00C2FBD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FA9D54D2812EF0E00C2FBD8 /* Assets.xcassets */; };
 		0FA9D5512812EF0E00C2FBD8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FA9D5502812EF0E00C2FBD8 /* Preview Assets.xcassets */; };
@@ -35,6 +42,9 @@
 		0FA9D5832812FD3F00C2FBD8 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9D5822812FD3F00C2FBD8 /* ArrayExtension.swift */; };
 		0FA9D5852813F01E00C2FBD8 /* URLSessionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9D5842813F01E00C2FBD8 /* URLSessionExtension.swift */; };
 		0FA9D5882813F21800C2FBD8 /* TheMovieDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9D5872813F21800C2FBD8 /* TheMovieDBAPI.swift */; };
+		0FB822BC281893EB00FD8001 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB822BB281893EB00FD8001 /* BundleExtension.swift */; };
+		0FB822BE2818970B00FD8001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB822BD2818970B00FD8001 /* ContentView.swift */; };
+		0FB822C22818974E00FD8001 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB822C12818974E00FD8001 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +66,13 @@
 
 /* Begin PBXFileReference section */
 		0F32EAB928174E690076D848 /* MovieDetailNetworkViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailNetworkViewModifier.swift; sourceTree = "<group>"; };
+		0F5801E0281981CF00816E18 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0F5801E1281981CF00816E18 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0F5801E2281981CF00816E18 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0F5801E3281981CF00816E18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0F5801E4281981CF00816E18 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0F666FE02816CF8D003AA615 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0F666FE92816F56F003AA615 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		0F6FD815281489C800E1D3C7 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		0F6FD8172815483D00E1D3C7 /* CalendarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtensions.swift; sourceTree = "<group>"; };
 		0F6FD81928154D6A00E1D3C7 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
@@ -65,9 +81,11 @@
 		0F6FD82F2815E32400E1D3C7 /* MovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponse.swift; sourceTree = "<group>"; };
 		0F6FD8322816A87200E1D3C7 /* MovieDetailHeaderViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailHeaderViewModifier.swift; sourceTree = "<group>"; };
 		0F6FD83C2816ACDC00E1D3C7 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
-		0F6FD8472816BA8500E1D3C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		0F6FD8482816BA8500E1D3C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0F8A4EDE281482CC009EC11D /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
+		0FA19B2528198EE500243A80 /* SystemThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemThemeManager.swift; sourceTree = "<group>"; };
+		0FA19B272819A2BB00243A80 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		0FA19B2D2819B65000243A80 /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
+		0FA19B2F2819B9C200243A80 /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
 		0FA9D5462812EF0E00C2FBD8 /* Sillicon Power.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sillicon Power.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FA9D5492812EF0E00C2FBD8 /* Sillicon_PowerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sillicon_PowerApp.swift; sourceTree = "<group>"; };
 		0FA9D54D2812EF0E00C2FBD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +102,9 @@
 		0FA9D5822812FD3F00C2FBD8 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		0FA9D5842813F01E00C2FBD8 /* URLSessionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtension.swift; sourceTree = "<group>"; };
 		0FA9D5872813F21800C2FBD8 /* TheMovieDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMovieDBAPI.swift; sourceTree = "<group>"; };
+		0FB822BB281893EB00FD8001 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
+		0FB822BD2818970B00FD8001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0FB822C12818974E00FD8001 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +114,8 @@
 			files = (
 				0F6FD82528155F3A00E1D3C7 /* URLImageStore in Frameworks */,
 				0F6FD82328155F3A00E1D3C7 /* URLImage in Frameworks */,
+				0F666FE62816F557003AA615 /* Realm in Frameworks */,
+				0F666FE82816F557003AA615 /* RealmSwift in Frameworks */,
 				0F6FD81D28154DB600E1D3C7 /* AlertToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,6 +137,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F5801DE281981CF00816E18 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				0F5801DF281981CF00816E18 /* Localizable.strings */,
+				0FA19B2D2819B65000243A80 /* Languages.swift */,
+				0FA19B2F2819B9C200243A80 /* LocalizationManager.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		0F6FD8312816A84300E1D3C7 /* ViewModifier */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,14 +154,6 @@
 				0F32EAB928174E690076D848 /* MovieDetailNetworkViewModifier.swift */,
 			);
 			path = ViewModifier;
-			sourceTree = "<group>";
-		};
-		0F6FD8452816BA8500E1D3C7 /* Localization */ = {
-			isa = PBXGroup;
-			children = (
-				0F6FD8462816BA8500E1D3C7 /* Localizable.strings */,
-			);
-			path = Localization;
 			sourceTree = "<group>";
 		};
 		0F8A4EDD28148284009EC11D /* Views */ = {
@@ -140,6 +165,15 @@
 				0F8A4EDE281482CC009EC11D /* MovieView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0FA19B2428198EB600243A80 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				0FA19B2528198EE500243A80 /* SystemThemeManager.swift */,
+				0FA19B272819A2BB00243A80 /* Theme.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 		0FA9D53D2812EF0E00C2FBD8 = {
@@ -166,10 +200,12 @@
 			isa = PBXGroup;
 			children = (
 				0F666FE02816CF8D003AA615 /* LaunchScreen.storyboard */,
-				0F6FD8452816BA8500E1D3C7 /* Localization */,
+				0F5801DE281981CF00816E18 /* Localization */,
+				0FA19B2428198EB600243A80 /* Theme */,
 				0FA9D5812812FD3000C2FBD8 /* Extensions */,
 				0FA9D5862813F1FB00C2FBD8 /* API */,
 				0FA9D58928140E2D00C2FBD8 /* Feature */,
+				0FB822BD2818970B00FD8001 /* ContentView.swift */,
 				0FA9D5492812EF0E00C2FBD8 /* Sillicon_PowerApp.swift */,
 				0FA9D54D2812EF0E00C2FBD8 /* Assets.xcassets */,
 				0FA9D54F2812EF0E00C2FBD8 /* Preview Content */,
@@ -216,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				0FA9D57A2812F87100C2FBD8 /* MovieService.swift */,
+				0F666FE92816F56F003AA615 /* RealmService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -235,6 +272,7 @@
 				0FA9D5842813F01E00C2FBD8 /* URLSessionExtension.swift */,
 				0F6FD8172815483D00E1D3C7 /* CalendarExtensions.swift */,
 				0F6FD83C2816ACDC00E1D3C7 /* StringExtensions.swift */,
+				0FB822BB281893EB00FD8001 /* BundleExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -251,6 +289,7 @@
 		0FA9D58928140E2D00C2FBD8 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				0FB822BF2818973800FD8001 /* Settings */,
 				0FA9D58A28140E4500C2FBD8 /* MovieList */,
 			);
 			path = Feature;
@@ -266,6 +305,22 @@
 				0F8A4EDD28148284009EC11D /* Views */,
 			);
 			path = MovieList;
+			sourceTree = "<group>";
+		};
+		0FB822BF2818973800FD8001 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0FB822C02818974400FD8001 /* Views */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		0FB822C02818974400FD8001 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0FB822C12818974E00FD8001 /* SettingsView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +343,8 @@
 				0F6FD81C28154DB600E1D3C7 /* AlertToast */,
 				0F6FD82228155F3A00E1D3C7 /* URLImage */,
 				0F6FD82428155F3A00E1D3C7 /* URLImageStore */,
+				0F666FE52816F557003AA615 /* Realm */,
+				0F666FE72816F557003AA615 /* RealmSwift */,
 			);
 			productName = "Sillicon Power";
 			productReference = 0FA9D5462812EF0E00C2FBD8 /* Sillicon Power.app */;
@@ -359,11 +416,15 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
+				fr,
+				it,
 			);
 			mainGroup = 0FA9D53D2812EF0E00C2FBD8;
 			packageReferences = (
 				0F6FD81B28154DB600E1D3C7 /* XCRemoteSwiftPackageReference "AlertToast" */,
 				0F6FD82128155F3A00E1D3C7 /* XCRemoteSwiftPackageReference "url-image" */,
+				0F666FE42816F557003AA615 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 0FA9D5472812EF0E00C2FBD8 /* Products */;
 			projectDirPath = "";
@@ -382,8 +443,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FA9D5512812EF0E00C2FBD8 /* Preview Assets.xcassets in Resources */,
+				0F5801E5281981CF00816E18 /* Localizable.strings in Resources */,
 				0F666FE12816CF8D003AA615 /* LaunchScreen.storyboard in Resources */,
-				0F6FD8492816BA8500E1D3C7 /* Localizable.strings in Resources */,
 				0FA9D54E2812EF0E00C2FBD8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,24 +470,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FA19B302819B9C200243A80 /* LocalizationManager.swift in Sources */,
 				0F32EABA28174E690076D848 /* MovieDetailNetworkViewModifier.swift in Sources */,
 				0FA9D5852813F01E00C2FBD8 /* URLSessionExtension.swift in Sources */,
+				0FB822BE2818970B00FD8001 /* ContentView.swift in Sources */,
 				0F6FD8182815483D00E1D3C7 /* CalendarExtensions.swift in Sources */,
 				0FA9D57B2812F87100C2FBD8 /* MovieService.swift in Sources */,
 				0F6FD8332816A87200E1D3C7 /* MovieDetailHeaderViewModifier.swift in Sources */,
 				0F8A4EDF281482CC009EC11D /* MovieView.swift in Sources */,
 				0FA9D5792812F78B00C2FBD8 /* APIError.swift in Sources */,
 				0FA9D54A2812EF0E00C2FBD8 /* Sillicon_PowerApp.swift in Sources */,
+				0FA19B282819A2BB00243A80 /* Theme.swift in Sources */,
 				0F6FD829281594D000E1D3C7 /* MovieListView.swift in Sources */,
+				0FA19B2628198EE500243A80 /* SystemThemeManager.swift in Sources */,
 				0FA9D5882813F21800C2FBD8 /* TheMovieDBAPI.swift in Sources */,
 				0FA9D5832812FD3F00C2FBD8 /* ArrayExtension.swift in Sources */,
+				0F666FEA2816F56F003AA615 /* RealmService.swift in Sources */,
 				0F6FD82E2815A1FC00E1D3C7 /* MovieDetailView.swift in Sources */,
 				0FA9D5752812F11900C2FBD8 /* Movie.swift in Sources */,
 				0FA9D5802812FAFA00C2FBD8 /* MovieViewModel.swift in Sources */,
+				0FB822BC281893EB00FD8001 /* BundleExtension.swift in Sources */,
 				0F6FD8302815E32400E1D3C7 /* MovieResponse.swift in Sources */,
 				0F6FD81A28154D6A00E1D3C7 /* ErrorView.swift in Sources */,
 				0F6FD816281489C800E1D3C7 /* Configuration.swift in Sources */,
+				0FA19B2E2819B65000243A80 /* Languages.swift in Sources */,
 				0F6FD83D2816ACDC00E1D3C7 /* StringExtensions.swift in Sources */,
+				0FB822C22818974E00FD8001 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,11 +532,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0F6FD8462816BA8500E1D3C7 /* Localizable.strings */ = {
+		0F5801DF281981CF00816E18 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0F6FD8472816BA8500E1D3C7 /* en */,
-				0F6FD8482816BA8500E1D3C7 /* Base */,
+				0F5801E0281981CF00816E18 /* en */,
+				0F5801E1281981CF00816E18 /* es */,
+				0F5801E2281981CF00816E18 /* it */,
+				0F5801E3281981CF00816E18 /* Base */,
+				0F5801E4281981CF00816E18 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -479,6 +551,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -539,6 +612,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -595,7 +669,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Sillicon Power/Preview Content\"";
 				DEVELOPMENT_TEAM = 3AU4MMQS7J;
 				ENABLE_PREVIEWS = YES;
@@ -605,15 +679,14 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.doonamis.Sillicon-Power";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -628,7 +701,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Sillicon Power/Preview Content\"";
 				DEVELOPMENT_TEAM = 3AU4MMQS7J;
 				ENABLE_PREVIEWS = YES;
@@ -638,15 +711,14 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.doonamis.Sillicon-Power";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -773,6 +845,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0F666FE42816F557003AA615 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.25.0;
+			};
+		};
 		0F6FD81B28154DB600E1D3C7 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/elai950/AlertToast.git";
@@ -792,6 +872,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0F666FE52816F557003AA615 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F666FE42816F557003AA615 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		0F666FE72816F557003AA615 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F666FE42816F557003AA615 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		0F6FD81C28154DB600E1D3C7 /* AlertToast */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0F6FD81B28154DB600E1D3C7 /* XCRemoteSwiftPackageReference "AlertToast" */;

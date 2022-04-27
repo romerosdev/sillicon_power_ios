@@ -16,12 +16,27 @@ import URLImageStore
 @main
 struct Sillicon_PowerApp: App {
     
+    // MARK: - Properties
+    
     let urlImageService = URLImageService(fileStore: URLImageFileStore(),
                                           inMemoryStore: URLImageInMemoryStore())
     
+    // MARK: - Initialisation
+    
+    init() {
+        Bundle.swizzleLocalization()
+    }
+    
+    // MARK: - UI
+    
     var body: some Scene {
+        
+        // Store images in cache (offline mode)
+        let urlImageService = URLImageService(fileStore: URLImageFileStore(),
+                                              inMemoryStore: URLImageInMemoryStore())
+        
         WindowGroup {
-            MovieListView()
+            ContentView()
                 .environment(\.urlImageService, urlImageService)
         }
     }

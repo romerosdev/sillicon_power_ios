@@ -21,9 +21,13 @@ class ErrorSettings: ObservableObject {
 
 struct ErrorView: View {
     
+    // MARK: - Properties
+    
     @StateObject var settings = ErrorSettings()
     private let handler: EmptyStateActionHandler
     private var error: Error
+    
+    // MARK: - Initialisation
     
     internal init(
         error: Error,
@@ -31,6 +35,8 @@ struct ErrorView: View {
             self.error = error
             self.handler = handler
         }
+    
+    // MARK: - UI
     
     var body: some View {
         ZStack {
@@ -55,7 +61,7 @@ struct ErrorView: View {
                 VStack(spacing: 11) {
                     if case APIError.transportError(_) = error {
                         Text("ERR_NO_INTERNET_TITLE".localized())
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Theme.textColor)
                             .font(.system(size: 20, weight: .regular))
                     }
                     Text(error.localizedDescription)

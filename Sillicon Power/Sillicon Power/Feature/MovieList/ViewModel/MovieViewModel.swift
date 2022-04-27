@@ -24,6 +24,8 @@ protocol MovieViewModel {
 @MainActor
 final class MovieViewModelImpl: ObservableObject, MovieViewModel {
     
+    // MARK: - Enums
+    
     /// Used to control view states (related to networking calls)
     enum State {
         case na
@@ -31,6 +33,8 @@ final class MovieViewModelImpl: ObservableObject, MovieViewModel {
         case success(data: MovieContent)
         case failed(error: Error)
     }
+    
+    // MARK: - Properties
     
     // Combine properties
     @Published private(set) var state: State = .na
@@ -41,15 +45,23 @@ final class MovieViewModelImpl: ObservableObject, MovieViewModel {
     
     // Network service
     private let service: MovieService
+    // Offline service
+    private let offlineService: RealmService
     
     // Content used on pagination feature
     private(set) var content = MovieContent()
     
+    // MARK: - Initialisation
+    
     /// View model initialisation.
     /// - Parameter service: Movie service instance.
-    init(service: MovieService) {
+    /// - Parameter offlineService: Movie offline service instance.
+    init(service: MovieService, offlineService: RealmService) {
         self.service = service
+        self.offlineService = offlineService
     }
+    
+    // MARK: - Methods
     
     /// Get the system wide configuration information.
     func getConfiguration() async {
@@ -86,15 +98,27 @@ final class MovieViewModelImpl: ObservableObject, MovieViewModel {
                                                    page: self.content.page + 1)
             content.movies += data.movies
             content.movies.removeDuplicates()
+            offlineService.addMovies(movies: content.movies)
             content.page = data.page
             content.canLoadNextPage = data.page <= data.totalPages
             state = .success(data: content)
         } catch {
             self.error = error
-            if content.movies.isEmpty {
-                state = .failed(error: error)
+            if case APIError.transportError(_) = error {
+                let offlineMovies = offlineService.getMovies()
+                content.movies += offlineMovies
+                content.movies.removeDuplicates()
+                if content.movies.isEmpty {
+                    state = .failed(error: error)
+                } else {
+                    state = .success(data: content)
+                }
             } else {
-                hasError.toggle()
+                if content.movies.isEmpty {
+                    state = .failed(error: error)
+                } else {
+                    hasError.toggle()
+                }
             }
         }
     }
@@ -107,6 +131,7 @@ final class MovieViewModelImpl: ObservableObject, MovieViewModel {
             let data = try await service.getMovieDetail(id: movie.id,
                                                         language: "locale".localized())
             selectedMovie = data
+            offlineService.addMovie(movie: data)
         } catch {
             selectedMovie = movie
         }

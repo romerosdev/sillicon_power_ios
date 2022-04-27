@@ -13,6 +13,8 @@ import SwiftUI
 
 struct MovieDetailHeaderViewModifier: ViewModifier {
     
+    // MARK: - Properties
+    
     let movie: Movie
     
     static let dateFormatter: DateFormatter = {
@@ -20,6 +22,8 @@ struct MovieDetailHeaderViewModifier: ViewModifier {
         formatter.dateFormat = "MMM dd, yyyy"
         return formatter
     }()
+    
+    // MARK: - UI
     
     func body(content: Content) -> some View {
         ZStack {
@@ -32,7 +36,7 @@ struct MovieDetailHeaderViewModifier: ViewModifier {
                                    endPoint: .bottom)
                 )
         }
-        .frame(height: UIScreen.main.bounds.width * 0.56)
+        .frame(height: UIScreen.main.bounds.width * (UIScreen.main.bounds.width < 500 ? 0.56 : 0.3 ))
         .overlay(
             VStack(spacing: 10) {
                 Spacer()

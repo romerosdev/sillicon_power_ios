@@ -10,12 +10,20 @@
 ////////////////////////////////////////////////////////////////////////////
 
 import Foundation
+import UIKit
 
-extension String {
-    /// Returns a localized string, with an optional comment for translators.
-    /// - Parameter comment: Optional comment for translators.
-    /// - Returns: Localized string.
-    func localized(comment: String = "") -> String {
-        return NSLocalizedString(self, comment: comment)
+class LocalizationManager {
+    
+    // MARK: - Singleton pattern
+    static let shared = LocalizationManager()
+    
+    private init() {}
+    
+    // MARK: - Methods
+    
+    /// Handle user language actions, if needed.
+    /// - Parameter language: New user language
+    func handleUserLanguage(language: String) {
+        
     }
 }

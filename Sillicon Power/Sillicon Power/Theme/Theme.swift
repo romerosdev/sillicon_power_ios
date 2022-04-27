@@ -9,13 +9,12 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import Foundation
+import SwiftUI
 
-extension String {
-    /// Returns a localized string, with an optional comment for translators.
-    /// - Parameter comment: Optional comment for translators.
-    /// - Returns: Localized string.
-    func localized(comment: String = "") -> String {
-        return NSLocalizedString(self, comment: comment)
-    }
+enum Theme {
+    static let dividerColor = Color("DividerColor")
+    static let textColor = Color("TextColor")
+    static let networkBackgroundColor = Color("NetworkBackgroundColor")
+    static let genreBackgroundColor = Color("GenreBackgroundColor")
+    static let toastBackgroundColor = Color("ToastBackgroundColor")
 }

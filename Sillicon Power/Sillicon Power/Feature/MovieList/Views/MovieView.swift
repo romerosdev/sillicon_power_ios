@@ -15,8 +15,12 @@ import URLImage
 
 struct MovieView: View {
     
+    // MARK: - Properties
+    
     let movie: Movie
     let baseUrl = UserDefaults.standard.string(forKey: "secure_base_url")
+    
+    // MARK: - UI
     
     var body: some View {
         if let baseUrl = baseUrl, let path = movie.posterPath, let url = URL(string: baseUrl + "/w780" + path) {
@@ -45,7 +49,11 @@ struct MovieView: View {
 
 struct MoviePosterPlaceholderView: View {
     
+    // MARK: - Properties
+    
     let movie: Movie
+    
+    // MARK: - UI
     
     var body: some View {
         ZStack {
@@ -54,7 +62,7 @@ struct MoviePosterPlaceholderView: View {
                 .aspectRatio(contentMode: .fill)
             VStack() {
                 Spacer()
-                Text(movie.name ?? "")
+                Text(movie.name ?? movie.originalName ?? "")
                     .foregroundColor(.gray)
                     .multilineTextAlignment(.center)
                     .padding(.bottom, 16)
