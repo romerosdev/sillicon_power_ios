@@ -17,7 +17,7 @@ struct ContentView: View {
     
     @AppStorage("darkModeEnabled") private var darkModeEnabled = false
     @AppStorage("systemThemeEnabled") private var systemThemeEnabled = false
-    @AppStorage("userLanguage") private var userLanguage = "en"
+    @AppStorage("userLanguage") private var userLanguage = "locale".localized()
     
     // MARK: - UI
     
